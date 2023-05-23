@@ -36,33 +36,37 @@ public class Main { //main class
             boolean end = false; //boolean for formatting
             int i = 0; //index for formatting
             ArrayList<String> similar = getsimilar(item, words); //gets similar words
-            System.out.print(item + ", is incorrect, did you mean: "); //prints similar words
-            if (similar.size() == 1) { //checks if there is only one similar word
-                System.out.println(similar.get(0) + "?"); //prints the similar word
-            } else {
-                for (String w : similar) { //loops through similar words
-                    if (i == similar.size() - 1) {
-                        end = true; //sets end to true if the index is the last
+            if (similar.size() > 0) {
+                System.out.print(item + ", is incorrect, did you mean: "); //prints similar words
+                if (similar.size() == 1) { //checks if there is only one similar word
+                    System.out.println(similar.get(0) + "?"); //prints the similar word
+                } else {
+                    for (String w : similar) { //loops through similar words
+                        if (i == similar.size() - 1) {
+                            end = true; //sets end to true if the index is the last
+                        }
+                        if (start) {
+                            System.out.print(w); //prints the first word
+                            start = false; //sets start to false
+                        } else if (end) {
+                            System.out.println(", " + w + "?"); //prints the last word
+                        } else {
+                            System.out.print(", " + w); //prints the middle words
+                        }
+                        i++; //increments index
                     }
-                    if (start) {
-                        System.out.print(w); //prints the first word
-                        start = false; //sets start to false
-                    } else if (end) {
-                        System.out.println(", " + w + "?"); //prints the last word
-                    } else {
-                        System.out.print(", " + w); //prints the middle words
-                    }
-                    i++; //increments index
                 }
+            } else {
+                System.out.print(item + ", is incorrect, no similar words found."); //prints this if there are no similar words
             }
             if (similar.size() == 0) {System.out.println();} //prints a new line if there are no similar words
         } else { //if the word is in the dictionary
-            System.out.println(item + ", is correct"); //prints this if the word is in the dictionary <-(I thought I spelled this wrong but the program tells me otherwise)
+            System.out.println(item + ", is correct."); //prints this if the word is in the dictionary <-(I thought I spelled this wrong but the program tells me otherwise)
         }
     }
 
     public static String in () { //method for getting user input
-        System.out.println("input a string"); //prints instructions
+        System.out.println("input a string."); //prints instructions
         Scanner in = new Scanner(System.in); //scanner for user input
         System.out.print("> "); //literally does nothing
         String i = in.nextLine(); //get input from next line
