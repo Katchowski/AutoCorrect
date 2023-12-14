@@ -10,7 +10,7 @@ public class Main { //main class
         ArrayList<String> words = new ArrayList<>(); //big wordlist
         nums = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)); //adds numbers to the list
         symbols = new ArrayList<>(Arrays.asList("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?", "|", "`", "~")); //adds symbols to the list
-        File file1 = new File("C:\\Users\\jtjak\\IdeaProjects\\autocorrect\\src\\words.txt"); //file obj to read the wordlist
+        File file1 = new File("IdeaProjects\\autocorrect\\src\\words.txt"); //file obj to read the wordlist
         try { //try catch block for FileNotFoundException
             Scanner s = new Scanner(file1); //scanner declared with the file
             while (s.hasNextLine()) { //loops through every line in the file
