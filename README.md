@@ -1,3 +1,3 @@
 # AutoCorrect
 
-[Incomplete] JavaDocs: https://square-trite-nasturtium.glitch.me/package-summary.html
+[Incomplete Java Docs](https://square-trite-nasturtium.glitch.me/package-summary.html)
